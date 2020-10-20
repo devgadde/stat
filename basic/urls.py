@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import home.views
+import reco.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home.views.welcome)
+    path('home/', home.views.welcome),
+    path('me/',home.views.me),
+    path('bootstrap/', home.views.bootstrap,name='Home'),
+    path('offers/', home.views.offers,name='offers'),
+    path('recommendations/',reco.views.recommendations,name='reco')
 ]
